@@ -1,0 +1,31 @@
+apply plugin: 'application'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+mainClassName = "de.ancho.JinfoAlternatives"
+
+defaultTasks 'clean', 'build', 'idea'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.2.1'
+}
+
+task createDirs {
+	def groovySrcDirs = sourceSets*.groovy.srcDirs
+	def resourceDirs = sourceSets*.resources.srcDirs
+
+	outputs.files groovySrcDirs + resourceDirs
+
+	doLast{
+		groovySrcDirs*.each { it.mkdirs() }
+		resourceDirs*.each { it.mkdirs() }
+	}
+}
+
+compileJava.dependsOn createDirs
+
+task init(dependsOn: ['build', 'idea'])
