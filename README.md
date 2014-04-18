@@ -1,7 +1,7 @@
 # Synopsis
 This is a quick hack to install custom java [alternatives][DebianAlternatives] on debian based distros.
 
-It parses jinfo-files and installs the described alternatives. This gives you the ability to switch easyly between different jvm packages with `updat-java-alternatives`
+It parses jinfo-files and installs the described alternatives. This gives you the ability to switch easyly between different jvm packages with `update-java-alternatives`
 
 # Warning
 
@@ -16,7 +16,7 @@ This is a very quick hack. No validation. No Tests. No CommandLineArguments pars
 
 # Usage
 
-`jinfo-alternatives /usr/lib/jvm/.java-7-oracle.jinfo
+`jinfo-alternatives /usr/lib/jvm/.java-7-oracle.jinfo`
 
 #Preperation
 
@@ -47,7 +47,8 @@ A jinfo-file describes alternatives for a java-package named by <jname>.
 
 In /usr/lib/jvm is a jinfo-file named '.java-1.7.0-openjdk-amd64.jinfo' with the following content.
 
-`name=java-7-openjdk-amd64
+`
+name=java-7-openjdk-amd64
 alias=java-1.7.0-openjdk-amd64
 priority=1071
 section=main
@@ -91,7 +92,8 @@ jdk serialver /usr/lib/jvm/java-7-openjdk-amd64/bin/serialver
 jdk wsgen /usr/lib/jvm/java-7-openjdk-amd64/bin/wsgen
 jdk wsimport /usr/lib/jvm/java-7-openjdk-amd64/bin/wsimport
 jdk xjc /usr/lib/jvm/java-7-openjdk-amd64/bin/xjc
-plugin mozilla-javaplugin.so /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/IcedTeaPlugin.so`
+plugin mozilla-javaplugin.so /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/IcedTeaPlugin.so
+`
 
 To get a list of all available packages run
 
