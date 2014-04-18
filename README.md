@@ -105,5 +105,7 @@ To switch a package run
 
 
 # Links
+* [Debian Alternatives][DebianAlternatives]
+
 [DebianAlternatives]: https://wiki.debian.org/DebianAlternatives
 
